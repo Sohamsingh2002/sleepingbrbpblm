@@ -6,7 +6,7 @@ There are multiple barbers in a shop having fixed number of waiting chairs. In i
 
 ## Solution:
 
-Our solution ensures that a barber *(a thread)* sleeps when there are no customers *(each customer is a thread)* in the waiting room  \*\*. If there is someone, he cuts his hair (symbolizing some processing) and the customer leaves. If, then, there is no one in the waiting room, the barber goes to sleep. When another customer arrives, he then must wake up the barber.This must be synchronised for all barber & customers threads.
+Our solution ensures that a barber *(a thread)* sleeps when there are no customers *(each customer is a thread)* in the waiting room  . If there is someone, he cuts his hair (symbolizing some processing) and the customer leaves. If, then, there is no one in the waiting room, the barber goes to sleep. When another customer arrives, he then must wake up the barber.This must be synchronised for all barber & customers threads.
 
 We have used two semaphores **barbers & clients** both initialized to zero. An additional semaphore **mutex** ensures mutual exclusion among threads.We have maintained a queue of waiting customers using **queChair** .
 
